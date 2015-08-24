@@ -1,0 +1,171 @@
+URxvt.perl-ext-common:  default,font-size,searchable-scrollback<M-s>,matcher
+
+! URxvt.intensityStyles: false
+URxvt.saveLines: 65000
+URxvt.scrollBar: false
+URxvt.termName: xterm-256color
+URxvt.urgentOnBell: True
+URxvt.urlLauncher: /usr/bin/xdg-open
+URxvt.matcher.button: 2
+URxvt.depth: 32
+URxvt*meta8: False
+
+! font settings
+! URxvt.font: xft:Source Code Pro Medium,xft:Source Code Pro Medium for Powerline
+URxvt.font: xft:Bitstream Vera Sans Mono:style=Roman:size=9,xft:Inconsolata\ for\ Powerline:pixelsize=12
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintslight
+
+! on the fly font size changes
+URxvtURxvt.keysym.C-plus: perl:font-size:increase
+URxvtURxvt.keysym.C-minus: perl:font-size:decrease
+
+! fix F-Keys
+URxvt.keysym.F1:       \033OP
+URxvt.keysym.F2:       \033OQ
+URxvt.keysym.F3:       \033OR
+URxvt.keysym.F4:       \033OS
+
+! Base16 Default
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+! #define base00 #151515
+! #define base01 #202020
+! #define base02 #303030
+! #define base03 #505050
+! #define base04 #b0b0b0
+! #define base05 #d0d0d0
+! #define base06 #e0e0e0
+! #define base07 #f5f5f5
+! #define base08 #ac4142
+! #define base09 #d28445
+! #define base0A #f4bf75
+! #define base0B #90a959
+! #define base0C #75b5aa
+! #define base0D #6a9fb5
+! #define base0E #aa759f
+! #define base0F #8f5536
+
+! Base16 Bright
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+! #define base00 [70]#000000
+#define base00 #000000
+#define base01 #303030
+#define base02 #505050
+#define base03 #b0b0b0
+#define base04 #d0d0d0
+#define base05 #e0e0e0
+#define base06 #f5f5f5
+#define base07 #ffffff
+#define base08 #fb0120
+#define base09 #fc6d24
+#define base0A #fda331
+#define base0B #a1c659
+#define base0C #76c7b7
+#define base0D #6fb3d2
+#define base0E #d381c3
+#define base0F #be643c
+
+! Base16 Brewer
+! Scheme: Timothée Poisot (http://github.com/tpoisot)
+
+! #define base00 #0c0d0e
+! #define base01 #2e2f30
+! #define base02 #515253
+! #define base03 #737475
+! #define base04 #959697
+! #define base05 #b7b8b9
+! #define base06 #dadbdc
+! #define base07 #fcfdfe
+! #define base08 #e31a1c
+! #define base09 #e6550d
+! #define base0A #dca060
+! #define base0B #31a354
+! #define base0C #80b1d3
+! #define base0D #3182bd
+! #define base0E #756bb1
+! #define base0F #b15928
+
+! for dark versions
+URxvt.foreground:   base05
+URxvt.background:   base00
+URxvt.cursorColor:  base05
+URxvt.color0:       base00
+URxvt.color1:       base08
+URxvt.color2:       base0B
+URxvt.color3:       base0A
+URxvt.color4:       base0D
+URxvt.color5:       base0E
+URxvt.color6:       base0C
+URxvt.color7:       base05
+URxvt.color8:       base03
+URxvt.color9:       base09
+URxvt.color10:      base01
+URxvt.color11:      base02
+URxvt.color12:      base04
+URxvt.color13:      base06
+URxvt.color14:      base0F
+URxvt.color15:      base07
+
+! for light versions
+! URxvt.foreground:   base02
+! URxvt.background:   base07
+! URxvt.cursorColor:  base02
+! URxvt.color0:       base01
+! URxvt.color1:       base08
+! URxvt.color2:       base0B
+! URxvt.color3:       base0A
+! URxvt.color4:       base0D
+! URxvt.color5:       base0F
+! URxvt.color6:       base0C
+! URxvt.color7:       base06
+! URxvt.color8:       base00
+! URxvt.color9:       base09
+! URxvt.color10:      base02
+! URxvt.color11:      base03
+! URxvt.color12:      base04
+! URxvt.color13:      base0E
+! URxvt.color14:      base05
+! URxvt.color15:      base07
+
+! !Black
+! URxvt.color0: #1B1B1B
+! URxvt.color8: #5D5D5D
+!
+! !Red
+! URxvt.color1: #EA6868
+! URxvt.color9: #E09690
+!
+! !Green
+! URxvt.color2:  #8EB338
+! URxvt.color10: #CDEE69
+!
+! !Yellow
+! URxvt.color3:  #D0B03C
+! URxvt.color11: #FFE999
+!
+! !Blue
+! URxvt.color4:  #8AD1F9
+! URxvt.color12: #B0E2FF
+!
+! !Magenta
+! URxvt.color5:  #C9A0D1
+! URxvt.color13: #FBB1F9
+!
+! !Cyan
+! URxvt.color6:  #218693
+! URxvt.color14: #77DFD8
+!
+! !White
+! URxvt.color7:  #B0B0B0
+! URxvt.color15: #F7F7F7
+!
+! URxvt.background:   #262626
+! URxvt.colorBD:      #FFFFFF
+! URxvt.cursorColor:  #A0A0A0
+! URxvt.cursorColor2: #FFFFFF
+! URxvt.foreground:   #F8F8F2

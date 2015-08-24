@@ -1,0 +1,2 @@
+VAR=${KEYBOARD_LANGUAGE:-us}
+setxkbmap -option caps:escape,compose:menu ${VAR}

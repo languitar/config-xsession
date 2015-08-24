@@ -1,0 +1,3 @@
+# /homes/jwienke/local/`lsb_release -c | awk '{print $2}'`/x86_64/bin/termite -r mcabber-citec -t mcabber-citec -e "bash -c 'tmux a -t citec-mcabber || tmux new -s citec-mcabber \"mcabber -f ~/.mcabber/mcabberrc.citec\"'" &
+/homes/jwienke/local/`lsb_release -c | awk '{print $2}'`/x86_64/bin/termite -r mcabber -t mcabber -e "bash -c 'tmux a -t mcabber || tmux new -s mcabber mcabber'" &
+/homes/jwienke/local/`lsb_release -c | awk '{print $2}'`/x86_64/bin/termite -r weechat -t weechat -e "bash -c 'tmux a -t weechat || tmux new -s weechat weechat-curses'" &

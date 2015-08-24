@@ -1,0 +1,4 @@
+# fool xdg-open about the desktop we are using so that the mime defaults are respected
+# https://bbs.archlinux.org/viewtopic.php?pid=657397#p657397
+export GNOME_DESKTOP_SESSION_ID="01"
+/usr/bin/awesome
