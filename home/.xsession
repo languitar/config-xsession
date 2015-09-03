@@ -1,4 +1,4 @@
-. ~/.xsession-envsetup
+. ~/.xsession-envsetup || true
 
 # gpg-agent
 if [ -f ~/.gpg-agent-info ]
@@ -12,8 +12,8 @@ then
     eval `/usr/bin/gpg-agent --daemon --write-env-file`
 fi
 
-xrdb -merge ~/.Xresources
-xrdb -merge ~/.Xdefaults
+xrdb -merge ~/.Xresources || true
+xrdb -merge ~/.Xdefaults || true
 
 KBD_LAYOUT=${KEYBOARD_LANGUAGE:-us}
 setxkbmap -option caps:escape,compose:menu ${KBD_LAYOUT}
@@ -24,7 +24,7 @@ bash -c 'dbus-monitor --system "type=signal,interface=org.freedesktop.login1.Man
 klipper &
 volumeicon &
 
-. ~/.xsession-exec
+. ~/.xsession-exec || true
 
 /usr/bin/i3
 
