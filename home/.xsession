@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 . ~/.xsession-envsetup || true
 
 # gpg-agent
@@ -26,7 +27,7 @@ volumeicon &
 
 . ~/.xsession-exec || true
 
-/usr/bin/i3
+exec /usr/bin/i3
 
 # tear-down
 killall gpg-agent
