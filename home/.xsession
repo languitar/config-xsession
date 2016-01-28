@@ -23,6 +23,7 @@ setxkbmap -option caps:escape,compose:menu ${KBD_LAYOUT}
 xset s 480 dpms 620 0 0
 light-locker --lock-after-screensaver=20 --lock-on-suspend --no-late-locking &
 
+dunst &
 klipper &
 volumeicon &
 
