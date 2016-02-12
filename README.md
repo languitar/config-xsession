@@ -1,4 +1,4 @@
-# Dotfiles: bash configuration
+# Dotfiles: X session configuration
 
 My config for the Linux X session with common startup routines and settings which I manage via [homeshick](https://github.com/andsens/homeshick).
 
