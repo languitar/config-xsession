@@ -20,8 +20,8 @@ xautolock -locker 'bash -c "scrot ~/.lockscreen.png; convert ~/.lockscreen.png -
 bash -c 'dbus-monitor --system "type=signal,interface=org.freedesktop.login1.Manager" | while read -r line; do if echo $line | grep --quiet true; then xautolock -locknow; fi; done' &
 
 dunst &
-klipper &
 volumeicon &
+clipit &
 
 . ~/.xsession-exec || true
 
