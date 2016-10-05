@@ -16,9 +16,6 @@ fi
 xrdb -merge ~/.Xresources || true
 xrdb -merge ~/.Xdefaults || true
 
-KBD_LAYOUT=${KEYBOARD_LANGUAGE:-us}
-setxkbmap -option caps:escape,compose:menu ${KBD_LAYOUT}
-
 xautolock -locker 'bash -c "scrot ~/.lockscreen.png; convert ~/.lockscreen.png -quality 10 -scale 2.5% -scale 4000% ~/.lockscreen.png; i3lock -i ~/.lockscreen.png"' -detectsleep &
 bash -c 'dbus-monitor --system "type=signal,interface=org.freedesktop.login1.Manager" | while read -r line; do if echo $line | grep --quiet true; then xautolock -locknow; fi; done' &
 
