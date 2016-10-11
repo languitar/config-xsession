@@ -20,7 +20,6 @@ xss-lock -l ~/.transfer-lock.sh i3lock
 
 dunst &
 volumeicon &
-clipit &
 
 . ~/.xsession-exec || true
 
