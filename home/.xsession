@@ -16,7 +16,7 @@ fi
 xrdb -merge ~/.Xresources || true
 xrdb -merge ~/.Xdefaults || true
 
-xss-lock -l ~/.transfer-lock.sh i3lock
+xss-lock -l ~/.transfer-lock.sh i3lock &
 
 dunst &
 volumeicon &
