@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
 . ~/.xsession-envsetup || true
 
+# ssh-agent
+eval `ssh-agent`
+
 # gpg-agent
 if [ -f ~/.gpg-agent-info ]
 then
