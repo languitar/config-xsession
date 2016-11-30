@@ -19,9 +19,10 @@ fi
 xrdb -merge ~/.Xresources || true
 xrdb -merge ~/.Xdefaults || true
 
+xset -b
+
 xss-lock -l ~/.transfer-lock.sh i3lock &
 
-dunst &
 volumeicon &
 
 . ~/.xsession-exec || true
