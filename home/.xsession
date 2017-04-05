@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 . ~/.xsession-envsetup || true
 
+export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
+
 # ssh-agent
 eval `ssh-agent`
 
