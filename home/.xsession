@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 . ~/.xsession-envsetup || true
+[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
 
 export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
 
