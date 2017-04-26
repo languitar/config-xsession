@@ -1,4 +1,2 @@
-PATH            OVERRIDE="${HOME}/bin:${HOME}/.local/bin:${PATH}"
-_JAVA_OPTIONS   OVERRIDE="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 SSH_AGENT_PID	DEFAULT=
 SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"

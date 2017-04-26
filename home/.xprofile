@@ -1,0 +1,10 @@
+export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
+
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
+
+# disable bell
+xset -b
