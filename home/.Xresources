@@ -169,24 +169,3 @@ URxvt.color15:      base07
 ! URxvt.cursorColor:  #A0A0A0
 ! URxvt.cursorColor2: #FFFFFF
 ! URxvt.foreground:   #F8F8F2
-
-! rofi
-rofi.opacity: 85
-rofi.width: 100
-rofi.lines: 7
-rofi.columns: 4
-rofi.font: DejaVu Sans Mono for Powerline 10
-rofi.fg: #F8F8F2
-rofi.bg: #353535
-rofi.hlfg: #F8F8F2
-rofi.hlbg: #285577
-rofi.bc: #5F676A
-rofi.bw: 2
-rofi.location: 6
-rofi.padding: 2
-rofi.yoffset: 0
-rofi.xoffset: 0
-rofi.fixed-num-lines: true
-rofi.hmode: false
-rofi.terminal: termite
-rofi.ssh-set-title: true
