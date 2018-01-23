@@ -1,0 +1,27 @@
+default partial alphanumeric_keys
+xkb_symbols "default" {
+    // US international
+    include "us(altgr-intl)"
+    include "capslock(escape)"
+    include "level5(rwin_switch_lock)"
+
+    key.type[Group1] = "EIGHT_LEVEL";
+
+    key <AD01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, exclam] };
+    key <AD02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, at] };
+    key <AD03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, braceleft] };
+    key <AD04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, braceright] };
+    key <AD05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bar] };
+
+    key <AC01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, numbersign] };
+    key <AC02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, dollar] };
+    key <AC03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, parenleft] };
+    key <AC04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, parenright] };
+    key <AC05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, grave] };
+
+    key <AB01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, percent] };
+    key <AB02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asciicircum] };
+    key <AB03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bracketleft] };
+    key <AB04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bracketright] };
+    key <AB05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asciitilde] };
+};
