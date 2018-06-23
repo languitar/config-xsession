@@ -6,5 +6,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 
 export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
 
+export SUDO_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
+
 # disable bell
 xset -b
