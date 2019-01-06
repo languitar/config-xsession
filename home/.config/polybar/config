@@ -1,0 +1,275 @@
+[colors]
+background = #242424
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #d0b03c
+secondary = #72B3CC
+alert = #C75646
+
+[bar/general]
+monitor = ${env:MONITOR}
+
+width = 100%
+height = 22
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 0
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+font-0 = DejaVu Sans Mono:pixelsize=9;1
+font-1 = Material Icons:pixelsize=10;2
+
+modules-center = i3
+modules-right = date
+
+; tray-position = right
+tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+
+[bar/main]
+inherit = bar/general
+
+modules-left = volume cpu memory filesystem
+modules-right = xkeyboard date powermenu
+
+tray-position = right
+
+[bar/laptop-main]
+inherit = bar/general
+
+modules-left = xbacklight volume cpu memory swap battery filesystem
+modules-right = xkeyboard date powermenu
+
+tray-position = right
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+spacing = 1
+
+mount-0 = /
+mount-1 = /tmp
+mount-2 = /home
+
+; format-mounted-prefix = 
+
+label-mounted = %mountpoint% %percentage_used:2%%
+label-unmounted = %mountpoint% 
+label-unmounted-foreground = ${colors.foreground-alt}
+
+label-mounted-underline = ${colors.secondary}
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = false
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+label-mode-padding = 1
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %name%
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %name%
+label-unfocused-padding = ${self.label-focused-padding}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %name%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = ${self.label-focused-padding}
+
+[module/xbacklight]
+type = internal/xbacklight
+
+output = eDP1
+
+format = %{A1:arandr:}<label>%{A} <bar>
+label = 
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #ff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-underline = #f90000
+label =  %percentage:3%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-underline = #4bffdc
+label = %percentage_used:3%%
+
+[module/swap]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-underline = #4bffdc
+label = %percentage_swap_used:3%%
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = %m-%d
+date-alt = %Y-%m-%d
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = " "
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+[module/volume]
+type = internal/volume
+
+format-volume = %{A1:pavucontrol:}<label-volume>%{A} <bar-volume>
+label-volume = 
+label-volume-foreground = ${root.foreground}
+
+format-muted = <label-muted> <bar-volume>
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = 
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 100
+
+format-charging =  <label-charging>
+format-charging-underline = #ffb52a
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = " "
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-padding = 1
+format-background = ${colors.background-alt}
+
+label-open = 
+label-open-foreground = ${colors.secondary}
+label-close = 
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = 
+menu-0-0-exec = menu-open-1
+menu-0-1 = 
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = 
+menu-1-0-exec = menu-open-0
+menu-1-1 = 
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = 
+menu-2-0-exec = sudo poweroff
+menu-2-1 = 
+menu-2-1-exec = menu-open-0
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini

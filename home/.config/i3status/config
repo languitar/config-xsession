@@ -1,0 +1,48 @@
+general {
+       output_format = "i3bar"
+       colors = true
+       interval = 5
+}
+
+order += "cpu_usage"
+order += "load"
+order += "disk /"
+order += "disk /home"
+order += "battery 0"
+order += "tztime local"
+
+cpu_usage {
+    format = " %usage"
+}
+
+disk "/" {
+    format = "/ %percentage_used"
+}
+
+disk "/home" {
+    format = "/home %percentage_used"
+}
+
+tztime local {
+    format = "⌚ %Y-%m-%d %H:%M:%S"
+}
+
+load {
+    format = " %1min %5min %15min"
+}
+
+cpu_temperature 0 {
+    format = "T: %degrees °C"
+    path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+battery 0 {
+    format = "%status %percentage %remaining"
+    format_down = "No battery"
+#    status_chr = "⚇ CHR"
+#    status_bat = "⚡ BAT"
+#    status_full = "☻ FULL"
+    last_full_capacity = true
+    path = "/sys/class/power_supply/BAT%d/uevent"
+    low_threshold = 15
+}
