@@ -21,11 +21,11 @@ bindsym $mod+Control+x exec xset s activate
 bindsym $mod+p exec ~/.config/rofi/screenshot.sh
 
 # quickswitch navigation
-bindsym $mod+m exec quickswitch.py -o -d dmenu
-bindsym $mod+Shift+m exec quickswitch.py -w -o -d dmenu
-bindsym $mod+Control+m exec quickswitch.py -s -o -d dmenu
-bindsym $mod+i exec quickswitch.py -j -o -d dmenu
-bindsym $mod+Shift+i exec quickswitch.py -m -o -d dmenu
+bindsym $mod+m exec quickswitch.py -o
+bindsym $mod+Shift+m exec quickswitch.py -w -o
+bindsym $mod+Control+m exec quickswitch.py -s -o
+bindsym $mod+i exec quickswitch.py -j -o
+bindsym $mod+Shift+i exec quickswitch.py -m -o
 
 # kill focused window
 bindsym $mod+Shift+q kill
