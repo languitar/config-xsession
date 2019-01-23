@@ -34,6 +34,7 @@ cursor-scroll = ns-resize
 
 font-0 = DejaVu Sans Mono:pixelsize=9;1
 font-1 = Material Icons:pixelsize=10;2
+font-2 = Fira Mono:pixelsize=10;2
 
 modules-center = i3
 modules-right = date
