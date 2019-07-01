@@ -186,7 +186,7 @@ format-underline = #0a6cf5
 label = %date% %time%
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-volume = %{A1:pavucontrol:}<label-volume>%{A} <bar-volume>
 label-volume = 
