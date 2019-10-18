@@ -81,13 +81,14 @@ interval = 25
 spacing = 1
 
 mount-0 = /
-mount-1 = /tmp
-mount-2 = /home
+mount-1 = /var/lib/docker
+mount-2 = /tmp
+mount-3 = /home
 
 ; format-mounted-prefix = 
 
-label-mounted = %mountpoint% %percentage_used:2%%
-label-unmounted = %mountpoint% 
+label-mounted = %mountpoint:0:10% %percentage_used:2%%
+label-unmounted = %mountpoint:0:10% 
 label-unmounted-foreground = ${colors.foreground-alt}
 
 label-mounted-underline = ${colors.secondary}
