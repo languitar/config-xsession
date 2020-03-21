@@ -24,6 +24,8 @@ do
         else
             bar="main"
         fi
+    else
+        bar="general"
     fi
 
     MONITOR="$(echo "$line" | cut -d ' ' -f 1)" polybar --reload "${bar}" > /dev/null 2>&1 &
