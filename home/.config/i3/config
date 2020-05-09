@@ -3,7 +3,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # start a compositor
-exec --no-startup-id compton -CG
+exec --no-startup-id picom -C
 
 set $mod Mod4
 
