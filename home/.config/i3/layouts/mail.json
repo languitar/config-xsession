@@ -14,7 +14,7 @@
             "percent": 1,
             "swallows": [
                {
-                   "class": "^Thunderbird$"
+                   "class": "^(Thunderbird|Mail)$"
                }
             ],
             "type": "con"
