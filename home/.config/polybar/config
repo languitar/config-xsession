@@ -48,7 +48,7 @@ tray-padding = 2
 inherit = bar/general
 
 modules-left = volume cpu memory filesystem
-modules-right = xkeyboard date powermenu
+modules-right = xkeyboard date
 
 tray-position = right
 
@@ -56,7 +56,7 @@ tray-position = right
 inherit = bar/general
 
 modules-left = xbacklight volume cpu memory swap battery filesystem
-modules-right = xkeyboard date powermenu
+modules-right = xkeyboard date
 
 tray-position = right
 
@@ -232,36 +232,6 @@ format-full-underline = ${self.format-charging-underline}
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
-
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-padding = 1
-format-background = ${colors.background-alt}
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close = 
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = 
-menu-0-0-exec = menu-open-1
-menu-0-1 = 
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = 
-menu-1-0-exec = menu-open-0
-menu-1-1 = 
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = 
-menu-2-0-exec = sudo poweroff
-menu-2-1 = 
-menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true

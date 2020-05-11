@@ -1,0 +1,6 @@
+configuration {
+	font: "DejaVu Sans Mono 10";
+    terminal: "kitty";
+}
+
+@theme "breeze-dark"
