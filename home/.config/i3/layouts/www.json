@@ -17,11 +17,11 @@
             //    "x": 2,
             //    "y": 40
             // },
-            "name": "i3: Layout saving in i3 - Chromium",
+            "name": "Web Browser",
             "percent": 1,
             "swallows": [
                {
-                   "class": "^(Chromium|firefox|Navigator)$"
+                   "class": "^firefox$"
                }
             ],
             "type": "con"
