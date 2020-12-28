@@ -234,6 +234,7 @@ exec --no-startup-id "i3-msg 'workspace 2 mail; append_layout ~/.config/i3/layou
 exec --no-startup-id "i3-msg 'workspace 3 chat; append_layout ~/.config/i3/layouts/chat.json'"
 # spotify cannot be handled this way as the initial window doesn't have a wm_class
 for_window [class="Spotify"] move to workspace 4 music
+for_window [class="ncspot"] move to workspace 4 music
 
 # floating terminal
 exec --no-startup-id kitty --name floating-terminal -e fish
