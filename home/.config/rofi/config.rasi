@@ -3,4 +3,4 @@ configuration {
     terminal: "kitty";
 }
 
-@theme "breeze-dark"
+@theme "glue_pro_blue"
