@@ -21,11 +21,10 @@ bindsym $mod+Control+x exec xset s activate
 bindsym $mod+p exec ~/.config/rofi/screenshot.sh
 
 # quickswitch navigation
-bindsym $mod+m exec quickswitch.py -o
-bindsym $mod+Shift+m exec quickswitch.py -w -o
-bindsym $mod+Control+m exec quickswitch.py -s -o
-bindsym $mod+i exec quickswitch.py -j -o
-bindsym $mod+Shift+i exec quickswitch.py -m -o
+bindsym $mod+Shift+m exec i3-msg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.nodes==[]) | .name' | grep -v '__i3_scratch' | rofi -dmenu -i -p 'Focus window' | xargs -I '$' i3-msg '[title="$"] focus'
+bindsym $mod+m exec i3-msg -t get_workspaces | jq -r '.[] | select(.name) | .name' | rofi -dmenu -i -p 'Focus workspace' | xargs -I '$' i3-msg "workspace $"
+bindsym $mod+i exec i3-msg -t get_workspaces | jq -r '.[] | select(.name) | .name' | grep -v '__i3_scratch' | rofi -dmenu -i -p 'Move the current window to workspace' | xargs -I '$' i3-msg "move container to workspace $"
+bindsym $mod+Shift+i exec i3-msg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.nodes==[]) | .name' | grep -v '__i3_scratch' | rofi -dmenu -i -p 'Move window to the current workspace' | xargs -I '$' i3-msg '[title="$"] move container to workspace current'
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -96,7 +95,7 @@ bindsym $mod+Shift+h workspace prev_on_output
 bindsym $mod+Right workspace next_on_output
 bindsym $mod+Shift+l workspace next_on_output
 
-bindsym $mod+Shift+n exec ~/.config/i3/rename-workspace.sh
+bindsym $mod+Shift+n exec "i3-msg rename workspace to $(rofi -dmenu --lines 1 -p 'New name')"
 bindsym $mod+n exec "i3-msg workspace $(rofi -dmenu -lines 0 -p 'New name')"
 
 bindsym $mod+y [urgent=latest] focus
@@ -221,11 +220,12 @@ for_window [instance="sun-awt-X11-XWindowPeer"] focus
 for_window [class="^jetbrains-.+"][name="^win.+"] focus
 
 # media keys
-bindsym XF86MonBrightnessUp exec bash -c "xbacklight -time 0 -inc 10 && notify-send -t 1000 -a display -i display-brightness -h int:value:\$(xbacklight -get) -h string:synchronous:brightness brightness"
-bindsym XF86MonBrightnessDown exec bash -c "xbacklight -time 0 -dec 10 && notify-send -t 1000 -a display -i display-brightness -h int:value:\$(xbacklight -get) -h string:synchronous:brightness brightness"
-bindsym XF86AudioLowerVolume exec bash -c "notify-send -t 1000 -a volume -i audio-volume-medium -h int:value:\$(amixer -D pulse sset Master 5%- | grep 'Front Left:' | sed 's/.*\[\([0-9]*\)%\].*/\1/') -h string:synchronous:volume volume"
-bindsym XF86AudioRaiseVolume exec bash -c "notify-send -t 1000 -a volume -i audio-volume-medium -h int:value:\$(amixer -D pulse sset Master 5%+ | grep 'Front Left:' | sed 's/.*\[\([0-9]*\)%\].*/\1/') -h string:synchronous:volume volume"
-bindsym XF86AudioMute exec bash -c "state=$(amixer -D pulse set Master 1+ toggle | grep \'Front Left:\' | sed \'s/.*\[\(.*\)\]$/\1/\'); if [[ \$state == on ]]; then notify-send -t 1000 -a volume -i audio-volume-medium unmuted; else notify-send -t 1000 -a volume -i audio-volume-muted muted; fi"
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioStop  exec playerctl stop
 bindsym XF86AudioNext exec playerctl next
